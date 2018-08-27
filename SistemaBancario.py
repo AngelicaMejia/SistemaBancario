@@ -94,8 +94,11 @@ def menu():
             cedulaPrestamo = int(input('digite el cedula del usuario: '))
             valorPrestamo = int(input('Digite el valor del prestamo: '))
             numeroCuotaPrestamo = int(input('Digite numero de cuotas a pagar del prestamo: '))
+            valorCuota = valorPrestamo/numeroCuotaPrestamo
             prestamo = Prestamo(cedulaPrestamo, valorPrestamo, numeroCuotaPrestamo)
             prestamo.crear_prestamo()
+            cuota = Cuotas(cedulaPrestamo, numeroCuotaPrestamo, valorCuota, 'false')
+            cuota.pagar_cuota()
 
         elif seleccion == 3:
             print('---pagar cuota---')
