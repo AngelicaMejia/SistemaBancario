@@ -50,9 +50,9 @@ class Usuario(Prestamo,Cuotas):
     usuarios = []
     usuario = {}
 
-    def __init__(self, cedula, nombre, edad, correo, cedulaPrestamo, valorPrestamo, numeroCuotaPrestamo, cedulaCuota, numeroCuota, valorCuota ):
+    def __init__(self, cedula, nombre, edad, correo, cedulaPrestamo, valorPrestamo, numeroCuotaPrestamo, cedulaCuota, numeroCuota, valorCuota, estado ):
         Prestamo.__init__(self, cedulaPrestamo, valorPrestamo, numeroCuotaPrestamo)
-        Cuotas.__init__(self, cedulaCuota, numeroCuota, valorCuota)
+        Cuotas.__init__(self, cedulaCuota, numeroCuota, valorCuota, estado)
         self.cedula = cedula
         self.nombre = nombre
         self.edad = edad
@@ -100,13 +100,7 @@ def menu():
         elif seleccion == 3:
             print('---pagar cuota---')
             cedulaCuota = int(input('digite cedula de usuario: '))
-
-
-
-            
-
-
-
+          
         elif seleccion == 4:
             print('buscar usuarios')
 
